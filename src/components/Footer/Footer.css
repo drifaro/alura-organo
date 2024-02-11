@@ -1,0 +1,35 @@
+.footer{
+   background-image: url('../../../public/images/fundo.png');
+  background-size: auto; 
+  background-position: center;
+  background-color: #6278F7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 48px 64px;
+  flex-wrap: wrap;
+}
+
+.social-media{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.social-media img{
+  width: 24px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.footer p{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+}

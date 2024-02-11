@@ -1,8 +1,12 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
 .createCard {
   background-color: #6278F7;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   padding: 24px;
   cursor: pointer;
   color: #fff;

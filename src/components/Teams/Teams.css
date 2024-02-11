@@ -1,0 +1,45 @@
+.header-list-team{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.header-list-team h1{
+  font-family: 'Prata', serif;
+  color: #6278F7;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+.divider-list-team{
+  width: 64px;
+  border-top: 4px solid #6278F7;
+}
+
+.team{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 32px;
+}
+
+.team h3 {
+  font-family: 'Prata', serif;
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+.divider {
+  width: 32px;
+}
+
+.employee-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

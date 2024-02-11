@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Banner } from "./components/Banner";
 import { Form } from "./components/Form/Form";
+import { Teams } from "./components/Teams/Teams";
+import { teamList } from "./teamList";
+import { Footer } from "./components/Footer";
 
 export const App = () => {
   const [employeesData, setEmployeesData] = useState([]);
@@ -11,9 +14,22 @@ export const App = () => {
   return (
     <div className="App">
       <Banner />
-      <Form isRegistered={(employee) => newEmployeeAdd(employee)} />
+      <Form
+        teamNameList={teamList.map((item) => item.teamName)}
+        isRegistered={(employee) => newEmployeeAdd(employee)}
+      />
+      {teamList.map((team) => (
+        <Teams
+          key={team.teamName}
+          teamName={team.teamName}
+          backgroundColor={team.secondaryColor}
+          cardColor={team.primaryColor}
+          employees={employeesData.filter(
+            (employee) => employee.team === team.teamName
+          )}
+        />
+      ))}
+      <Footer />
     </div>
   );
 };
-
-export default App;

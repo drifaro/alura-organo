@@ -1,24 +1,31 @@
 import React from "react";
 import "./ListSelect.css";
 
-export const ListSelect = (list) => {
+export const ListSelect = ({
+  isChange,
+  label,
+  isRequired,
+  fieldValue,
+  options,
+}) => {
   const onFieldChange = (field) => {
-    list.isChange(field.target.value);
+    isChange(field.target.value);
   };
   return (
     <div className="select-field">
       <label htmlFor="select">
-        {list.label}
+        {label}
         <select
-          required={list.isRequired}
-          value={list.fieldValue}
+          required={isRequired}
+          value={fieldValue}
           onChange={onFieldChange}
           name="time-list-select"
           id="select"
         >
-          {list.itens.map((item) => (
-            <option key={item} value={item}>
-              {item}
+          <option value="">Selecione seu time...</option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
             </option>
           ))}
         </select>

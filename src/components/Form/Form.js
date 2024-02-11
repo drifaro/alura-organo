@@ -4,29 +4,24 @@ import { TextInput } from "./components/TextInput";
 import { ListSelect } from "./components/ListSelect/ListSelect";
 import { Button } from "./components/Button";
 
-export const Form = (props) => {
-  const timeList = [
-    "",
-    "Programação",
-    "Frontend",
-    "Data Science",
-    "DevOps",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
-  const [name, setName] = useState();
-  const [role, setRole] = useState();
-  const [image, setImage] = useState();
-  const [team, setTeam] = useState();
+export const Form = ({ isRegistered, teamNameList }) => {
+  const [name, setName] = useState('');
+  const [role, setRole] = useState('');
+  const [image, setImage] = useState('');
+  const [team, setTeam] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.isRegistered({
+    isRegistered({
       name,
       role,
       image,
       team,
     });
+    setName("");
+    setRole("");
+    setImage("");
+    setTeam("");
   };
 
   return (
@@ -51,13 +46,13 @@ export const Form = (props) => {
           label="Imagem"
         />
         <ListSelect
-          isRequired
-          fieldValue={team}
           isChange={(value) => setTeam(value)}
           label="Time"
-          itens={timeList}
+          isRequired
+          fieldValue={team}
+          options={teamNameList}
         />
-        <Button> Criar card </Button>
+        <Button>Criar card</Button>
       </form>
     </section>
   );
