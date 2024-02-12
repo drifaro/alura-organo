@@ -18,6 +18,12 @@ export const App = () => {
         teamNameList={teamList.map((item) => item.teamName)}
         isRegistered={(employee) => newEmployeeAdd(employee)}
       />
+      {employeesData.length > 0 && (
+        <section className="header-list-team">
+          <h1>Minha Organização</h1>
+          <div className="divider-list-team" />
+        </section>
+      )}
       {teamList.map((team) => (
         <Teams
           key={team.teamName}
